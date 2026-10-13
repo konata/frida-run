@@ -1,0 +1,33 @@
+{
+  "name": "frida-run",
+  "version": "0.1.0",
+  "description": "Download, deploy, and start frida-server on Android.",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "author": "konata",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konata/frida-run.git"
+  },
+  "homepage": "https://github.com/konata/frida-run",
+  "bugs": {
+    "url": "https://github.com/konata/frida-run/issues"
+  },
+  "keywords": ["frida", "android", "adb", "bun", "cli"],
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "bin": {
+    "frida-run": "./src/cli.js"
+  },
+  "files": [
+    "src",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "bun src/cli.js",
+    "test": "bun test",
+    "build": "bun build src/cli.js --target=bun --outdir=dist",
+    "prepublishOnly": "bun test && bun run build"
+  }
+}
